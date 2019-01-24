@@ -1,6 +1,6 @@
 # RouterExample
 
-This is the example application to accompany the blog post [Building web apps with Plug.Router]().
+This is the example application to accompany the blog post [Building web apps with Plug.Router](https://elixirschool.com/blog/building-apps-with-plug-router).
 We encourage you to check out the blog post for details on the application and it's purpose.
 
 ## Running
