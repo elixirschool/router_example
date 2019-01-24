@@ -6,14 +6,10 @@ defmodule RouterExample.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
     children = [
-      # Starts a worker by calling: RouterExample.Worker.start_link(arg)
-      # {RouterExample.Worker, arg}
+      Plug.Cowboy.child_spec(scheme: :http, plug: RouterExample.Router, options: [port: 4001])
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: RouterExample.Supervisor]
     Supervisor.start_link(children, opts)
   end

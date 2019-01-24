@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  </head>
+  <body>
+    <nav class="navbar is-primary is-fixed-top">
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/">
+            <span>Home</span>
+          </a>
+          <a class="navbar-item" href="/contact">
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <br/>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-6 is-offset-3">
+            <div class="notification is-success">
+            </div>
+            <div class="box">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input name" type="text" placeholder="Your name">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input email" type="email" placeholder="Email input" value="">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                  <textarea class="textarea message" placeholder="Textarea"></textarea>
+                </div>
+              </div>
+
+              <div class="field is-grouped has-text-centered">
+                <div class="control">
+                  <button class="submit button is-link is-large">
+                    <span>Submit</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        var notification = $('.notification');
+        notification.hide();
+
+        $('button.submit').click(function() {
+          var body = {
+            name: $('input.name').val(),
+            email: $('input.email').val(),
+            message: $('input.message').val()
+          };
+
+          $.ajax({
+            type: 'POST',
+            url: '/contact',
+            data: body,
+            dataType: 'json',
+            success: function(data) {
+              $('.notification').html(data.message).show();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

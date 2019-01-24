@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  </head>
+  <body>
+    <nav class="navbar is-primary is-fixed-top">
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="/">
+            <span>Home</span>
+          </a>
+          <a class="navbar-item" href="/contact">
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-info is-medium is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Developer Portfolio
+          </h1>
+          <h2 class="subtitle">
+            Solving hard problems with great code
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="columns is-multiline">
+          <%= for entry <- portfolio do %>
+            <div class="column is-4">
+              <div class="card large">
+                <header class="card-header">
+                  <p class="card-header-title">
+                  <span><%= entry.name %></span>
+                  </p>
+                </header>
+                <div class="card-content">
+                  <figure class="image">
+                    <img src="<%= entry.image %>" alt="">
+                  </figure>
+                </div>
+                <footer class="card-footer">
+                  <a href="#" class="card-footer-item">Visit</a>
+                </footer>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

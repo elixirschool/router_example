@@ -1,21 +1,20 @@
 # RouterExample
 
-**TODO: Add description**
+This is the example application to accompany the blog post [Building web apps with Plug.Router]().
+We encourage you to check out the blog post for details on the application and it's purpose.
 
-## Installation
+## Running
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `router_example` to your list of dependencies in `mix.exs`:
+1. Install our dependencies
 
-```elixir
-def deps do
-  [
-    {:router_example, "~> 0.1.0"}
-  ]
-end
-```
+  ```shell
+  $ mix deps.get
+  ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/router_example](https://hexdocs.pm/router_example).
+2. Run the server
 
+  ```shell
+  $ mix run --no-halt
+  ```
+
+3. Enjoy at [localhost:4001](localhost:4001)
