@@ -5,9 +5,11 @@ defmodule RouterExample.Router do
 
   @template_dir "lib/router_example/templates"
 
-  plug Plug.Parsers, parsers: [:urlencoded, :json],
-                   pass: ["text/*"],
-                   json_decoder: Jason
+  plug Plug.Parsers,
+    parsers: [:urlencoded, :json],
+    pass: ["text/*"],
+    json_decoder: Jason
+
   plug :match
   plug :dispatch
 
